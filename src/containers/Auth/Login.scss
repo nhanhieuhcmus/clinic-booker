@@ -1,0 +1,115 @@
+.login-background {
+    background: rgb(34, 193, 195);
+    background: linear-gradient(
+        135deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(253, 187, 45, 1) 100%
+    );
+    font-family: Helvetica, Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding: 10vh 0;
+    .login-container {
+        width: 400px;
+        height: 500px;
+        background-color: #fff;
+        border-radius: 16px;
+        .login-content {
+            padding: 28px;
+            .login-title {
+                font-size: 28px;
+                font-weight: bolder;
+                padding: 10px 0;
+            }
+
+            .login-input {
+                padding: 8px 0;
+                input {
+                    margin-top: 4px;
+                    height: 42px;
+                }
+            }
+
+            .password {
+                position: relative;
+            }
+
+            .toggle-password {
+                position: absolute;
+                right: 12px;
+                bottom: 20px;
+            }
+
+            .error-message {
+                color: red;
+            }
+
+            .btn-login {
+                margin: 12px 0;
+                width: 100%;
+                height: 36px;
+                border: none;
+                border-radius: 20px;
+                background: rgb(34, 193, 195);
+                background: linear-gradient(
+                    135deg,
+                    rgba(34, 193, 195, 1) 0%,
+                    rgba(253, 187, 45, 1) 100%
+                );
+                color: #fff;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            .btn-login:hover {
+                opacity: 0.8;
+            }
+            .forgot-password {
+                color: #000;
+                font-size: 12px;
+                opacity: 0.8;
+                text-decoration: none;
+            }
+            .forgot-password:hover{
+                cursor: pointer;
+                opacity: 0.7;
+                text-decoration: underline;
+            }
+            .login-with {
+                margin-top: 12px;
+                text-align: center;
+                font-size: 16px;
+            }
+            .social-login {
+                display: flex;
+                justify-content: center;
+                .login-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                    border-radius: 50%;
+                    color: #fff;
+                    width: 40px;
+                    height: 40px;
+                    margin: 4px;
+                }
+                .login-item:hover {
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+
+                .facebook {
+                    background-color: #3B5998;
+                }
+                .google {
+                    background-color: #DC4E41;
+                }
+                .twitter {
+                    background-color: #55ACEE;
+                }
+            }
+        }
+    }
+}
