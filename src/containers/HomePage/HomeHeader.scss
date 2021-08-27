@@ -3,10 +3,19 @@ body {
     $text-grey: #969495;
     $primary-color: #45c3d2;
     .home-header-container {
-        height: 58px;
+        height: 80px;
         font-family: Helvetica, Arial, sans-serif;
-        margin: 10px auto;
+        // border: 3px solid red;
+        padding: 8px 0;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        // width: 100%;
+        z-index: 3;
         .home-header-content {
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,7 +55,8 @@ body {
                             font-weight: 600;
                         }
                         p {
-                            font-weight: 300;
+                            font-weight: 100;
+                            opacity: 0.9;
                             margin-bottom: 0;
                         }
                     }
@@ -83,12 +93,15 @@ body {
     }
 
     .banner {
-        // height: calc(100% - 200px);
-        height: 400px;
+        margin-top: 80px;
+        height: calc(100vh - 120px);
+        // height: 90vh;
         background-image: url("../../assets/images/banner.jpg");
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+        // border: 3px solid red;
+        margin-bottom: 20px;
         // filter: brightness(80%);
 
         .banner-body {
@@ -98,14 +111,13 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 60vh;
+            height: 60%;
 
             padding: 80px 0;
             background-image: linear-gradient(
                 rgba(0, 0, 0, 0.25),
                 rgba(255, 255, 255, 0.1)
             );
-
             .banner-title {
                 // left: 50%;
                 // transform: translateX(-50%);
@@ -156,7 +168,7 @@ body {
                 // flex-basis: 100px;
                 justify-content: center;
                 width: 300px;
-                margin-top: 100px;
+                margin-top: 50px;
                 .google-play {
                     height: 32px;
                     width: 100%;
@@ -176,7 +188,9 @@ body {
             }
         }
         .banner-footer {
-            // min-height: 40%;
+            display: flex;
+            align-items: flex-end;
+            min-height: 40%;
             padding: 30px 0;
             background-image: linear-gradient(
                 rgba(255, 255, 255, 0.1),

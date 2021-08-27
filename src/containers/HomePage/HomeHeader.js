@@ -24,7 +24,7 @@ class HomeHeader extends Component {
         const currentLanguage = this.props.language;
         console.log("check language: ", currentLanguage);
         return (
-            <>
+            <React.Fragment>
                 <div className="home-header-container">
                     <div className="home-header-content">
                         <div className="left-header">
@@ -174,7 +174,7 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </div>
-            </>
+            </React.Fragment>
         );
     }
 }

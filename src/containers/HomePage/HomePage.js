@@ -1,14 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import HomeHeader from './HomeHeader';
+import HomeHeader from "./HomeHeader";
+import Footer from "./Footer";
 import Specialty from "./Section/Specialty";
+import MedicalFacility from "./Section/MedicalFacility";
+import OutstandingDoctor from "./Section/OutstandingDoctor";
+import Handbook from "./Section/Handbook";
+import About from "./Section/About";
 
 class HomePage extends Component {
     render() {
-        return <div>
-            <HomeHeader/>
-            <Specialty/>
-        </div>;
+        return (
+            <React.Fragment>
+                <HomeHeader />
+                <Specialty />
+                <MedicalFacility/>
+                <OutstandingDoctor/>
+                <Handbook/>
+                <About/>
+                <Footer/>
+            </React.Fragment>
+        );
     }
 }
 

@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./Section.scss";
-import "./Specialty.scss";
-import { FormattedMessage } from "react-intl";
+import "./MedicalFacility.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-class Specialty extends Component {
+class MedicalFacility extends Component {
     render() {
         const settings = {
             dots: false,
@@ -17,10 +16,10 @@ class Specialty extends Component {
             slidesToScroll: 1,
         };
         return (
-            <div className="section section-specialty">
+            <div className="section section-medical-facility">
                 <div className="section-container">
                     <div className="section-header">
-                        <span>Chuyên khoa phổ biến</span>
+                        <span>Cơ sở y tế nổi bật</span>
                         <button className="section-view-more-button">
                             Xem thêm
                         </button>
@@ -31,37 +30,47 @@ class Specialty extends Component {
                                 <div className="contain-zoom-bg-image">
                                     <div className="bg-image image1"></div>
                                 </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
+                                <div className="item-tittle">
+                                    Bệnh viện Đại học Y Dược 1
+                                </div>
                             </div>
                             <div className="item">
                                 <div className="contain-zoom-bg-image">
-                                    <div className="bg-image image2"></div>
+                                    <div className="bg-image image1"></div>
                                 </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
+                                <div className="item-tittle">
+                                    Bệnh viện Đại học Y Dược 1
+                                </div>
                             </div>
                             <div className="item">
                                 <div className="contain-zoom-bg-image">
-                                    <div className="bg-image image3"></div>
+                                    <div className="bg-image image1"></div>
                                 </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
+                                <div className="item-tittle">
+                                    Bệnh viện Đại học Y Dược 1
+                                </div>
                             </div>
                             <div className="item">
                                 <div className="contain-zoom-bg-image">
-                                    <div className="bg-image image4"></div>
+                                    <div className="bg-image image1"></div>
                                 </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
+                                <div className="item-tittle">
+                                    Bệnh viện Đại học Y Dược 1
+                                </div>
                             </div>
                             <div className="item">
                                 <div className="contain-zoom-bg-image">
-                                    <div className="image image5"></div>
+                                    <div className="bg-image image1"></div>
                                 </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
+                                <div className="item-tittle">
+                                    Bệnh viện Đại học Y Dược 1
+                                </div>
                             </div>
                             <div className="item">
                                 <div className="contain-zoom-bg-image">
-                                    <div className="image image6"></div>
+                                    <div className="bg-image image1"></div>
                                 </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
+                                <div className="item-tittle">Title</div>
                             </div>
                         </Slider>
                     </div>
@@ -74,7 +83,6 @@ class Specialty extends Component {
 const mapStateToProps = (state) => {
     return {
         isLoggedIn: state.user.isLoggedIn,
-        language: state.app.language,
     };
 };
 
@@ -82,5 +90,4 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
-export default Specialty;
+export default connect(mapStateToProps, mapDispatchToProps)(MedicalFacility);
