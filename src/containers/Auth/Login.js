@@ -65,6 +65,12 @@ class Login extends Component {
         });
     };
 
+    handleEnterPress = (event) => {
+        if (event.key==="Enter" || event.keyCode === 13){
+            this.handleLogin();
+        }
+    } 
+
     render() {
         return (
             <div className="login-background">
@@ -79,6 +85,7 @@ class Login extends Component {
                                     className="form-control"
                                     placeholder="Enter your username..."
                                     onChange={this.handleUsernameChange}
+                                    onKeyDown={this.handleEnterPress}
                                 />
                             </div>
                             <div className="form-group login-input password">
@@ -92,6 +99,7 @@ class Login extends Component {
                                     className="form-control"
                                     placeholder="Enter your password..."
                                     onChange={this.handlePasswordChange}
+                                    onKeyDown={this.handleEnterPress}
                                 />
                                 <div
                                     className="toggle-password"

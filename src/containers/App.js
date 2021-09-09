@@ -16,6 +16,9 @@ import System from "../routes/System";
 
 import { CustomToastCloseButton } from "../components/CustomToast";
 import CustomScrollBars from "../components/CustomScrollbars";
+import DetailDoctor from "./Patient/Doctor/DetailDoctor";
+import Doctor from "../routes/Doctor";
+import verifyEmail from "./Patient/verifyEmail";
 
 class App extends Component {
     handlePersistorState = () => {
@@ -62,14 +65,26 @@ class App extends Component {
                                         component={userIsAuthenticated(System)}
                                     />
                                     <Route
+                                        path={"/doctor/"}
+                                        component={userIsAuthenticated(Doctor)}
+                                    />
+                                    <Route
                                         path={path.HOMEPAGE}
                                         component={HomePage}
+                                    />
+                                    <Route
+                                        path={path.DETAIL_DOCTOR}
+                                        component={DetailDoctor}
+                                    />
+                                    <Route
+                                        path={path.VERIFY_EMAIL_BOOKING}
+                                        component={verifyEmail}
                                     />
                                 </Switch>
                             </CustomScrollBars>
                         </div>
 
-                        <ToastContainer
+                        {/* <ToastContainer
                             className="toast-container"
                             toastClassName="toast-item"
                             bodyClassName="toast-item-body"
@@ -80,6 +95,17 @@ class App extends Component {
                             closeOnClick={false}
                             draggable={false}
                             closeButton={<CustomToastCloseButton />}
+                        /> */}
+                        <ToastContainer
+                            position="bottom-right"
+                            autoClose={3000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
                         />
                     </div>
                 </Router>
