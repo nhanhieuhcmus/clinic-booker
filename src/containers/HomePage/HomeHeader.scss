@@ -8,12 +8,13 @@ body {
         // border: 3px solid red;
         padding: 8px 0;
         background-color: #fff;
-        position: fixed;
+        // position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
         right: 0;
         // width: 100%;
-        z-index: 3;
+        z-index: 1000;
         .home-header-content {
 
             display: flex;
@@ -93,7 +94,7 @@ body {
     }
 
     .banner {
-        margin-top: 80px;
+        // margin-top: 80px;
         height: calc(100vh - 120px);
         // height: 90vh;
         background-image: url("../../assets/images/banner.jpg");

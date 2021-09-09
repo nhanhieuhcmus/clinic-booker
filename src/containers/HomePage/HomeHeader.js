@@ -13,6 +13,7 @@ import { FormattedMessage } from "react-intl";
 
 import { LANGUAGES } from "../../utils/constant";
 import { changeLanguageApp } from "../../store/actions";
+import { withRouter } from "react-router";
 
 class HomeHeader extends Component {
     handleSelectLanguage = (event) => {
@@ -20,16 +21,24 @@ class HomeHeader extends Component {
         this.props.changeLanguageAppRedux(event.target.value);
     };
 
+    returnToHome = () => {
+        if (this.props.history){
+            this.props.history.push(`/home`);
+        }
+    };
+
     render() {
         const currentLanguage = this.props.language;
-        console.log("check language: ", currentLanguage);
         return (
             <React.Fragment>
                 <div className="home-header-container">
                     <div className="home-header-content">
                         <div className="left-header">
-                            <i class="fas fa-bars header-option-icon"></i>
-                            <div className="header-logo"></div>
+                            <i className="fas fa-bars header-option-icon"></i>
+                            <div
+                                className="header-logo"
+                                onClick={this.returnToHome}
+                            ></div>
                             <ul className="header-menu">
                                 <li className="menu-item">
                                     <a href="">
@@ -74,106 +83,94 @@ class HomeHeader extends Component {
                             <select
                                 className="select-language"
                                 onChange={this.handleSelectLanguage}
+                                value={
+                                    currentLanguage === LANGUAGES.VI
+                                        ? LANGUAGES.VI
+                                        : LANGUAGES.EN
+                                }
                             >
-                                <option
-                                    value={LANGUAGES.EN}
-                                    selected={
-                                        currentLanguage === LANGUAGES.EN
-                                            ? "selected"
-                                            : null
-                                    }
-                                >
-                                    English
-                                </option>
-                                <option
-                                    value={LANGUAGES.VI}
-                                    selected={
-                                        currentLanguage === LANGUAGES.VI
-                                            ? "selected"
-                                            : null
-                                    }
-                                >
-                                    Tiếng Việt
-                                </option>
+                                <option value={LANGUAGES.EN}>English</option>
+                                <option value={LANGUAGES.VI}>Tiếng Việt</option>
                             </select>
                         </div>
                     </div>
                 </div>
+                {this.props.isShowBanner && (
+                    <div className="banner">
+                        <div className="banner-body">
+                            <div className="banner-title">
+                                Nền tảng y tế
+                                <p>Chăm sóc sức khoẻ toàn diện</p>
+                            </div>
+                            <div className="banner-search">
+                                <div className="input-search">
+                                    <i className="fas fa-search search-icon"></i>
 
-                <div className="banner">
-                    <div className="banner-body">
-                        <div className="banner-title">
-                            Nền tảng y tế
-                            <p>Chăm sóc sức khoẻ toàn diện</p>
-                        </div>
-                        <div className="banner-search">
-                            <div className="input-search">
-                                <i class="fas fa-search search-icon"></i>
-
-                                <input
-                                    type="text"
-                                    placeholder="Tìm phòng khám ..."
-                                />
+                                    <input
+                                        type="text"
+                                        placeholder="Tìm phòng khám ..."
+                                    />
+                                </div>
+                            </div>
+                            <div className="banner-download-media">
+                                <div className="google-play"></div>
+                                <div className="app-store"></div>
                             </div>
                         </div>
-                        <div className="banner-download-media">
-                            <div className="google-play"></div>
-                            <div className="app-store"></div>
+                        <div className="banner-footer">
+                            <div className="banner-option">
+                                <div className="option-item">
+                                    <div className="option-image">
+                                        <img src={specialtyOption} alt="" />
+                                    </div>
+                                    <div className="option-title">
+                                        <FormattedMessage id="banner.specialty-test" />
+                                    </div>
+                                </div>
+                                <div className="option-item">
+                                    <div className="option-image">
+                                        <img src={remoteOption} alt="" />
+                                    </div>
+                                    <div className="option-title">
+                                        <FormattedMessage id="banner.remote-test" />
+                                    </div>
+                                </div>
+                                <div className="option-item">
+                                    <div className="option-image">
+                                        <img src={generalOption} alt="" />
+                                    </div>
+                                    <div className="option-title">
+                                        <FormattedMessage id="banner.general-test" />
+                                    </div>
+                                </div>
+                                <div className="option-item">
+                                    <div className="option-image">
+                                        <img src={testOption} alt="" />
+                                    </div>
+                                    <div className="option-title">
+                                        <FormattedMessage id="banner.medicine-test" />
+                                    </div>
+                                </div>
+                                <div className="option-item">
+                                    <div className="option-image">
+                                        <img src={spiritOption} alt="" />
+                                    </div>
+                                    <div className="option-title">
+                                        <FormattedMessage id="banner.spirit-health" />
+                                    </div>
+                                </div>
+                                <div className="option-item">
+                                    <div className="option-image">
+                                        <img src={dentistryOption} alt="" />
+                                    </div>
+                                    <div className="option-title">
+                                        <FormattedMessage id="banner.dentistry-test" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="banner-footer">
-                        <div className="banner-option">
-                            <div className="option-item">
-                                <div className="option-image">
-                                    <img src={specialtyOption} alt="" />
-                                </div>
-                                <div className="option-title">
-                                    <FormattedMessage id="banner.specialty-test" />
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-image">
-                                    <img src={remoteOption} alt="" />
-                                </div>
-                                <div className="option-title">
-                                    <FormattedMessage id="banner.remote-test" />
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-image">
-                                    <img src={generalOption} alt="" />
-                                </div>
-                                <div className="option-title">
-                                    <FormattedMessage id="banner.general-test" />
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-image">
-                                    <img src={testOption} alt="" />
-                                </div>
-                                <div className="option-title">
-                                    <FormattedMessage id="banner.medicine-test" />
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-image">
-                                    <img src={spiritOption} alt="" />
-                                </div>
-                                <div className="option-title">
-                                    <FormattedMessage id="banner.spirit-health" />
-                                </div>
-                            </div>
-                            <div className="option-item">
-                                <div className="option-image">
-                                    <img src={dentistryOption} alt="" />
-                                </div>
-                                <div className="option-title">
-                                    <FormattedMessage id="banner.dentistry-test" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                )}
             </React.Fragment>
         );
     }
@@ -193,4 +190,6 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(HomeHeader)
+);
