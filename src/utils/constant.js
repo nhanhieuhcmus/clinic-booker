@@ -3,7 +3,9 @@ export const path = {
     HOMEPAGE: '/home',
     LOGIN: '/login',
     LOG_OUT: '/logout',
-    SYSTEM: '/system'
+    SYSTEM: '/system',
+    DETAIL_DOCTOR:'/detail-doctor/:id',
+    VERIFY_EMAIL_BOOKING: '/verify-booking'
 };
 
 export const LANGUAGES = {
@@ -11,8 +13,9 @@ export const LANGUAGES = {
     EN: 'en'
 };
  
-export const manageActions = {
-    ADD: "ADD",
+export const CRUD_ACTIONS = {
+    CREATE: "CREATE",
+    READ: "READ",
     EDIT: "EDIT",
     DELETE: "DELETE"
 };
@@ -25,3 +28,9 @@ export const YesNoObj = {
     YES: 'Y',
     NO: 'N'
 }
+
+export const USER_ROLE = {
+    ADMIN: 'R1',
+    DOCTOR: 'R2',
+    PATIENT: 'R3',
+} 
