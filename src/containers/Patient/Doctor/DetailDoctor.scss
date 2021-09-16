@@ -1,0 +1,57 @@
+.doctor-detail-container {
+    // border: 3px solid red;
+    margin: 0 100px;
+
+    .doctor-intro {
+        display: flex;
+        padding: 12px 0;
+        // height: 200px;
+        .doctor-info__left {
+            width: 30%;
+            display: flex;
+            .avatar {
+                width: 120px;
+                height: 120px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                margin: auto;
+            }
+        }
+        .doctor-info__left {
+            width: 70%;
+            .doctor-name{
+                font-size: 24px;
+                font-weight: 600;
+            }
+            .doctor-description{
+                
+            }
+            .doctor-like-share {
+                padding: 8px 0;
+                width: 100%;
+            }
+        }
+    }
+    .doctor-schedule {
+        display: flex;
+        padding: 12px 0;
+        border: 2px solid red;
+        min-height: 200px;
+        .content-left {
+            width: 50%;
+
+        }
+        .content-right {
+            width: 50%;
+        }
+    }
+    .doctor-detail {
+        border: 3px solid blue;
+        margin-top: 20px;
+    }
+    .doctor-comment {
+        padding: 4px 0;
+    }
+}
