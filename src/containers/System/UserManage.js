@@ -28,7 +28,6 @@ class UserManage extends Component {
 
     getAllUserFromReact = async () => {
         const response = await getAllUsers("all");
-        console.log(response.users);
         if (response && response.errCode === 0) {
             this.setState({
                 users: response.users,
@@ -116,7 +115,7 @@ class UserManage extends Component {
 
     render() {
         return (
-            <div className="user-container">
+            <div className="user-manage-container">
                 <ModalUser
                     isOpen={this.state.isOpenModalUser}
                     toggle={this.toggleUserModal}
@@ -131,8 +130,8 @@ class UserManage extends Component {
                     />
                 )}
 
-                <div className="title">Manage users with Erik</div>
-                <div className="m-2">
+                <div className="user-manage__title">Manage Users</div>
+                <div className="col-12">
                     <button
                         className="btn btn-primary px-3"
                         onClick={this.handleAddNewUserModal}
@@ -141,39 +140,45 @@ class UserManage extends Component {
                         Add new user
                     </button>
                 </div>
-                <div className="users-table">
-                    <table id="customers">
-                        <tr>
-                            <th>Email</th>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Address</th>
-                            <th>Action</th>
-                        </tr>
-                        {this.state.users &&
-                            this.state.users.map((user) => (
-                                <tr key={user.id}>
-                                    <td>{user.email}</td>
-                                    <td>{user.firstName}</td>
-                                    <td>{user.lastName}</td>
-                                    <td>{user.address}</td>
-                                    <td>
-                                        <a
-                                            onClick={() =>
-                                                this.handleEditUserButton(user)
-                                            }
-                                        >
-                                            <i className="fas fa-edit btn-edit"></i>
-                                        </a>
-                                        <a
-                                            id={user.id}
-                                            onClick={this.handleDeleteUser}
-                                        >
-                                            <i className="fas fa-trash-alt btn-delete"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            ))}
+                <div className="user-manage__body">
+                    <table id="customers" className="user-manage__table col-12">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Address</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.users &&
+                                this.state.users.map((user) => (
+                                    <tr key={user.id}>
+                                        <td>{user.email}</td>
+                                        <td>{user.firstName}</td>
+                                        <td>{user.lastName}</td>
+                                        <td>{user.address}</td>
+                                        <td>
+                                            <a
+                                                onClick={() =>
+                                                    this.handleEditUserButton(
+                                                        user
+                                                    )
+                                                }
+                                            >
+                                                <i className="fas fa-edit btn-edit"></i>
+                                            </a>
+                                            <a
+                                                id={user.id}
+                                                onClick={this.handleDeleteUser}
+                                            >
+                                                <i className="fas fa-trash-alt btn-delete"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                ))}
+                        </tbody>
                     </table>
                 </div>
             </div>

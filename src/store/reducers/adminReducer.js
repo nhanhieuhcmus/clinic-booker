@@ -9,7 +9,8 @@ const initialState = {
     topDoctors: [],
     allDoctors: [],
     allTimes: [],
-    allRequiredDoctorInfo: []
+    allRequiredDoctorInfo: [],
+    isSaveDoctorInfoSuccess: false,
 };
 
 const adminReducer = (state = initialState, action) => {
@@ -104,7 +105,12 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
             };
 
-
+        // to know save doctor info in ManageDoctor success or not
+        case actionTypes.SAVE_INFO_DOCTOR_SUCCESS:
+            state.isSaveDoctorInfoSuccess = action.isSaveSuccess;
+            return {
+                ...state,
+            };
         default:
             return state;
     }

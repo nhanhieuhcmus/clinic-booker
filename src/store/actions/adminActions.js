@@ -8,9 +8,10 @@ import {
     getTopDoctorHomeService,
     getAllDoctorsService,
     postInfoDoctorService,
+    getAllSpecialtiesService,
+    getAllClinicsService,
 } from "../../services/userService";
 import { toast } from "react-toastify";
-import { update } from "lodash";
 
 // export const fetchGenderStart = () => ({
 //     type: actionTypes.FETCH_GENDER_START
@@ -207,7 +208,7 @@ export const editUserFailed = () => ({
 export const fetchTopDoctorsStart = () => {
     return async (dispatch, getState) => {
         try {
-            const response = await getTopDoctorHomeService(4);
+            const response = await getTopDoctorHomeService(+6);
             if (response && response.errCode === 0) {
                 dispatch(fetchTopDoctorsSuccess(response.data));
             } else {
@@ -271,6 +272,7 @@ export const saveInfoDoctorStart = (doctorInfo) => {
 
 export const saveInfoDoctorSuccess = () => ({
     type: actionTypes.SAVE_INFO_DOCTOR_SUCCESS,
+    isSaveSuccess: true,
 });
 export const saveInfoDoctorFailed = () => ({
     type: actionTypes.SAVE_INFO_DOCTOR_FAILED,
@@ -307,18 +309,27 @@ export const fetchRequiredDoctorInfoStart = () => {
             const resPrice = await getAllCodeService("PRICE");
             const resPayment = await getAllCodeService("PAYMENT");
             const resProvince = await getAllCodeService("PROVINCE");
+            const resSpecialty = await getAllSpecialtiesService();
+            const resClinic = await getAllClinicsService();
+
             if (
                 resPrice &&
                 resPrice.errCode === 0 &&
                 resPayment &&
                 resPayment.errCode === 0 &&
                 resProvince &&
-                resProvince.errCode === 0
+                resProvince.errCode === 0 &&
+                resSpecialty &&
+                resSpecialty.errCode === 0 &&
+                resClinic &&
+                resClinic.errCode === 0
             ) {
                 const data = {
                     resPrice: resPrice.data,
                     resPayment: resPayment.data,
                     resProvince: resProvince.data,
+                    resSpecialty: resSpecialty.data,
+                    resClinic: resClinic.data,
                 };
                 dispatch(fetchRequiredDoctorInfoSuccess(data));
             } else {

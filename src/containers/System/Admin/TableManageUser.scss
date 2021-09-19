@@ -1,0 +1,53 @@
+@import '../../../styles/variables';
+.user-manage__table {
+    border-spacing: 0 16px;
+    border-collapse: separate;
+    thead, tbody{
+        tr{
+            th, td{
+                vertical-align: middle;
+                border:none;
+                &:nth-last-child(1){
+                    text-align: center;
+                }
+                padding: 16px 8px;
+
+            }
+        }
+    }
+    tbody{
+        tr{
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            td{
+                background:#fff;
+                &:nth-child(1){
+                    border-radius: 5px 0 0 5px;
+                }
+                &:nth-last-child(1){
+                    border-radius: 0 5px 5px 0;
+                }
+            }
+        }
+        .edit-btn, .delete-btn {
+            &:hover i{
+                color: $primary-color;
+            }
+        }
+    }
+
+    .btn-edit,
+    .btn-delete {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: #000;
+        font-size: 16px;
+        padding: 4px;
+        &:hover {
+            background-color: transparent;
+            color: #000;
+            cursor: pointer;
+        }
+    }
+}
