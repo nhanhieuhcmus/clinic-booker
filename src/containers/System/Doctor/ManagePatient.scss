@@ -1,0 +1,68 @@
+@import '../../../styles/variables';
+
+div._loading_overlay_wrapper {
+    position: unset;
+    ._loading_overlay_overlay{
+        z-index: 100000;
+    }
+}
+.manage-patient-container {
+    max-width: 80%;
+    margin: 0 auto;
+    .manage-patient__body {
+        padding: 0 50px;
+        .user-manage__table {
+            border-spacing: 0 16px;
+            border-collapse: separate;
+            thead, tbody{
+                tr{
+                    th, td{
+                        vertical-align: middle;
+                        border:none;
+                        &:nth-last-child(1){
+                            text-align: center;
+                        }
+                        padding: 16px 8px;
+        
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                    border-radius: 5px;
+                    td{
+                        background:#fff;
+                        &:nth-child(1){
+                            border-radius: 5px 0 0 5px;
+                        }
+                        &:nth-last-child(1){
+                            border-radius: 0 5px 5px 0;
+                        }
+                    }
+                }
+                .btn-confirm {
+                    border: none;
+                    outline: none;
+                    border-radius: 8px;
+                    padding: 8px 16px;
+                    color: #fff;
+                    background-color: $common-green;
+                    &:hover {
+                        filter: brightness(110%);
+                    }
+                }
+            }
+        
+            
+        }
+        .no-data {
+            text-align: center;
+        }
+       
+    }
+    @media screen and (max-width: 1024px) {
+        max-width: 100%;
+        margin: 0 16px;
+    }
+}
