@@ -1,0 +1,56 @@
+@import "../../../styles/variables";
+.manage-clinic-container {
+    max-width: 80%;
+    margin: 0 auto;
+    .title {
+    }
+    .edit-btn, .delete-btn {
+        &:hover i{
+            color: $primary-color;
+        }
+    }
+    .preview-img {
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        .preview-img__label {
+            width: 100%;
+            padding: 8px;
+            background-color: #ccc;
+            border-radius: 4px;
+            i {
+                margin-left: 8px;
+            }
+        }
+        .preview-box {
+            border: 1px solid #ccc;
+            // height: 100px;
+            // width: 100px;
+            width: 100%;
+            padding-top: 100%;
+        }
+    }
+    .create-btn,
+    .update-btn {
+        margin-top: 12px;
+        padding: 8px 16px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        color: #fff;
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+    .create-btn {
+        background-color: $primary-color;
+    }
+    .update-btn {
+        background-color: $common-green;
+    }
+    @media screen and (max-width: 1024px) {
+        max-width: 100%;
+        margin: 0 16px;
+    }
+}
