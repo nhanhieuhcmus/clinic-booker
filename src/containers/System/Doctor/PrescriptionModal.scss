@@ -1,0 +1,17 @@
+@import "../../../styles/variables";
+.prescription-modal-container {
+    .send-btn,
+    .cancel-btn {
+        margin-top: 12px;
+        padding: 8px 16px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+    .send-btn {
+        background-color: $primary-color;
+    }
+}
