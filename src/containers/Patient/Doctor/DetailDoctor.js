@@ -8,6 +8,7 @@ import DoctorSchedule from "./DoctorSchedule";
 import DoctorExtraInfo from "./DoctorExtraInfo";
 import LikeShare from "../../System/SocialPlugin/LikeShare";
 import Comment from "../../System/SocialPlugin/Comment";
+import { FormattedMessage } from "react-intl";
 
 require("dotenv").config();
 
@@ -42,7 +43,7 @@ class DetailDoctor extends Component {
         const detailDoctor = this.state.detailDoctor;
         const currentLanguage = this.props.language;
         const currentURL =
-            process.env.REACT_APP_IS_LOCALHOST === 1
+            +process.env.REACT_APP_IS_LOCALHOST === 1
                 ? "herokuapp"
                 : window.location.href;
         let fullName, position;
@@ -63,56 +64,64 @@ class DetailDoctor extends Component {
             <div>
                 <HomeHeader isShowBanner={false} />
                 <div className="doctor-detail-container">
-                    <h1>Detail Doctor</h1>
-                    <div className="doctor-intro">
-                        <div className="doctor-info__left">
-                            <div
-                                className="avatar"
-                                style={{
-                                    backgroundImage: `url(${
-                                        detailDoctor.image
-                                            ? detailDoctor.image
-                                            : ""
-                                    })`,
-                                }}
-                            ></div>
-                        </div>
-                        <div className="doctor-info__left">
-                            <div className="doctor-name">
-                                {position} - {fullName}
+                    <div className="doctor-detail-content">
+                        <div className="doctor-intro">
+                            <div className="doctor-info__left">
+                                <div
+                                    className="avatar"
+                                    style={{
+                                        backgroundImage: `url(${
+                                            detailDoctor.image
+                                                ? detailDoctor.image
+                                                : ""
+                                        })`,
+                                    }}
+                                ></div>
                             </div>
-                            <div className="doctor-description">
-                                {detailDoctor.Markdown?.contentHTML &&
-                                    detailDoctor.Markdown.description}
+                            <div className="doctor-info__right">
+                                <div className="doctor-name">
+                                    {position} - {fullName}
+                                </div>
+                                <div className="doctor-description">
+                                    {detailDoctor.Markdown?.contentHTML &&
+                                        detailDoctor.Markdown.description}
+                                </div>
+                                <div className="doctor-like-share">
+                                    <LikeShare
+                                    // dataHref={currentURL}
+                                    />
+                                </div>
                             </div>
-                            <div className="doctor-like-share">
-                                <LikeShare dataHref={currentURL} />
+                        </div>
+                        <div className="doctor-schedule">
+                            <div className="content-left">
+                                <DoctorSchedule
+                                    doctorId={this.state.currentDoctorId}
+                                />
+                            </div>
+                            <div className="content-right">
+                                <DoctorExtraInfo
+                                    doctorId={this.state.currentDoctorId}
+                                />
                             </div>
                         </div>
-                    </div>
-                    <div className="doctor-schedule">
-                        <div className="content-left">
-                            <DoctorSchedule
-                                doctorId={this.state.currentDoctorId}
-                            />
+
+                        <div className="doctor-detail">
+                            <h3>
+                                <FormattedMessage id="patient.detail-doctor.doctor-info" />
+                            </h3>
+                            {detailDoctor.Markdown?.contentHTML && (
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: detailDoctor.Markdown
+                                            .contentHTML,
+                                    }}
+                                ></div>
+                            )}
                         </div>
-                        <div className="content-right">
-                            <DoctorExtraInfo
-                                doctorId={this.state.currentDoctorId}
-                            />
+                        <div className="doctor-comment">
+                            <Comment dataHref={currentURL} width="100%" />
                         </div>
-                    </div>
-                    <div className="doctor-detail">
-                        {detailDoctor.Markdown?.contentHTML && (
-                            <div
-                                dangerouslySetInnerHTML={{
-                                    __html: detailDoctor.Markdown.contentHTML,
-                                }}
-                            ></div>
-                        )}
-                    </div>
-                    <div className="doctor-comment">
-                        <Comment dataHref={currentURL} width="100%"/>
                     </div>
                 </div>
             </div>

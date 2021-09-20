@@ -1,23 +1,40 @@
 {
     "home-header": {
         "specialty": "Chuyên khoa",
-        "search-doctor": "Tìm bác sĩ theo chuyên khoa",
         "health-facility": "Cơ sở y tế",
-        "select-room": "Chọn bệnh viện phòng khám",
         "doctor": "Bác sĩ",
-        "select-good-doctor": "Chọn bác sĩ giỏi",
-        "fee": "Gói khám",
-        "check-health": "Khám sức khoẻ tổng quát",
+        "package": "Gói khám",
+        "about": "Giới thiệu",
         "support": "Hỗ trợ",
         "welcome": "Xin chào"
     },
     "banner": {
+        "medical-platform": "Nền tảng y tế",
+        "slogan": "Chăm sóc sức khoẻ toàn diện",
         "specialty-test": "Khám chuyên khoa",
         "remote-test": "Khám từ xa",
         "general-test": "Khám tổng quát",
         "medicine-test": "Xét nghiệm y học",
         "spirit-health": "Sức khoẻ tinh thần",
-        "dentistry-test": "Khám nha khoa"
+        "dentistry-test": "Khám nha khoa",
+        "explore": "Khám phá ngay",
+        "install": "Tải ứng dụng"
+    },
+    "footer": {
+        "corp": "Công ty Cổ phần công nghệ ClinicBooker",
+        "no": "ĐKKD số: 0123456789. Sở KHĐT Hà Nội cấp ngày 16/09/2021",
+        "collaborate": "Liên hệ hợp tác",
+        "faq": "Câu hỏi thường gặp",
+        "term": "Điều khoản sử dụng",
+        "privacy-policy": "Chính sách bảo mật",
+        "resolve-procedure": "Quy trình giải quyết",
+        "regulation": "Quy chế hoạt động",
+        "headquarters": "Trụ sở tại Ha Noi",
+        "headquarters-address": "28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội",
+        "office": "Văn phòng tại TP Hồ Chí Minh",
+        "office-address": "6/6 Cách Mạch Tháng Tám, P. Bến Thành, Quận 1",
+        "support": "Hỗ trợ khách hàng",
+        "support-time": "7h - 18h"
     },
     "menu": {
         "admin": {
@@ -25,7 +42,7 @@
             "manage-doctor": "Quản lý bác sĩ",
             "manage-admin": "Quản lý admin",
             "crud": "CRUD user",
-            "crud-redux": "CRUD Redux",
+            "crud-redux": "Quản lý người dùng",
             "clinic": "Phòng khám",
             "manage-clinic": "Quản lý phòng khám",
             "specialty": "Chuyên khoa",
@@ -34,11 +51,16 @@
             "manage-handbook": "Quản lý cẩm nang"
         },
         "doctor": {
-            "manage-schedule": "Quản lý lịch khám"
+            "manage-schedule": "Quản lý lịch khám",
+            "manage-patient": "Quản lý bệnh nhân"
         }
     },
     "homepage": {
+        "specialty": "Chuyên khoa phổ biến",
+        "medical-facility": "Cơ sở y tế nổi bật",
         "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
+        "handbook": "Cẩm nang",
+        "about": "Truyền thông nói về ClinicBooker",
         "view-more": "Xem thêm"
     },
     "manage-user": {
@@ -52,10 +74,18 @@
         "address": "Địa chỉ",
         "position": "Chức danh",
         "role": "Vai trò",
-        "image": "Ảnh",
+        "avatar": "Ảnh đại diện",
         "create-button": "Thêm mới",
         "edit-button": "Cập nhật",
-        "upload": "Tải lên"
+        "upload": "Tải lên",
+        "table": {
+            "lastname": "Họ",
+            "firstname": "Tên",
+            "address": "Địa chỉ",
+            "action": "Thao tác",
+            "edit": "Edit",
+            "delete": "Delete"
+        }
     },
     "manage-schedule": {
         "title": "Quản lý lịch khám",
@@ -77,11 +107,27 @@
             "province": "Tỉnh thành",
             "name-clinic": "Tên phòng khám",
             "address-clinic": "Địa chỉ phòng khám",
-            "note": "Ghi chú"
+            "note": "Ghi chú",
+            "specialty": "Chuyên khoa",
+            "type": "Nhập..."
+        },
+        "manage-specialty": {
+            "title": "Quản lý chuyên khoa",
+            "name": "Tên chuyên khoa",
+            "table": {
+                "name": "Chuyên khoa",
+                "updatedAt": "Cập nhật"
+            }
+        },
+        "manage-clinic": {
+            "title": "Quản lý phòng khám",
+            "name": "Tên phòng khám",
+            "address": "Địa chỉ"
         }
     },
     "patient": {
         "detail-doctor": {
+            "doctor-info": "Thông tin chi tiết",
             "schedule": "Lịch khám",
             "no-schedule": "Chưa có lịch khám!",
             "select-and-book": "Chọn và đặt lịch khám bệnh"
@@ -103,12 +149,19 @@
             "birthday": "Ngày sinh",
             "gender": "Giới tính",
             "select": "Chọn ...",
-            "confirm": "Xác nhận",
+            "booking-btn": "Đặt lịch",
             "cancel": "Huỷ"
         },
         "profile-doctor": {
             "free-booking": "Miễn phí đặt lịch",
             "price": "Giá khám"
         }
+    },
+    "markdown-editor": {
+        "placeholder": "Nhập thông tin..."
+    },
+    "manage-clinic": {
+        "create-btn": "Lưu",
+        "update-btn": "Cập nhật"
     }
 }

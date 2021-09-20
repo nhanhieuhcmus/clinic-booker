@@ -1,0 +1,44 @@
+@import "../../../styles/variables";
+.manage-doctor-container {
+    // padding: 0px 32px;
+    max-width: 80%;
+    margin: 0 auto;
+    .basic-info {
+        position: relative;
+        z-index: 2;
+        display: flex;
+    }
+    .more-info {
+    }
+    .title {
+        font-size: 24px;
+        margin-bottom: 24 px;
+    }
+    .manage-doctor-editor {
+        margin: 0 auto;
+    }
+
+    .create-btn,
+    .update-btn {
+        margin-top: 12px;
+        padding: 8px 16px;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        color: #fff;
+        margin-bottom: 40px;
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+    .create-btn {
+        background-color: $primary-color;
+    }
+    .update-btn {
+        background-color: $common-green;
+    }
+    @media screen and (max-width: 1024px) {
+        max-width: 100%;
+        margin: 0 16px;
+    }
+}

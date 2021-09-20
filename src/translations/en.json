@@ -1,31 +1,48 @@
 {
     "home-header": {
         "specialty": "Specialty",
-        "search-doctor": "Choose doctor",
-        "health-facility": "Heath facility",
-        "select-room": "Choose hospital",
+        "health-facility": "Medical Facility",
         "doctor": "Doctor",
-        "select-good-doctor": "Choose good doctor",
-        "fee": "Check package",
-        "check-health": "Check general health",
+        "package": "Package",
+        "about": "About",
         "support": "Support",
         "welcome": "Welcome"
     },
     "banner": {
-        "specialty-test": "specialty-test",
-        "remote-test": "remote-test",
-        "general-test": "general-test",
-        "medicine-test": "medicine-test",
-        "spirit-health": "spirit-health",
-        "dentistry-test": "dentistry-test"
+        "medical-platform": "Medical Platform",
+        "slogan": "Comprehensive Health Care",
+        "specialty-test": "Specialty Examine",
+        "remote-test": "Remote Examine",
+        "general-test": "Overview Examine",
+        "medicine-test": "Medicine Test",
+        "spirit-health": "Spirit Health",
+        "dentistry-test": "Dentistry Examine",
+        "explore": "Explore now",
+        "install": "Install app"
+    },
+    "footer": {
+        "corp": "ClinicBooker, Corp",
+        "no": "No: 0123456789. Ha Noi Business licensing 2021/09/16",
+        "collaborate": "Collaborate contact",
+        "faq": "Frequently asked questions",
+        "term": "Term of use",
+        "privacy-policy": "Privacy policy",
+        "resolve-procedure": "Resolve procedure",
+        "regulation": "Regulation",
+        "headquarters": "Headquarters at Ha Noi",
+        "headquarters-address": "28 Thanh Thai, Dich Vong, Cau Giay, Ha Noi",
+        "office": "Office at Ho Chi Minh",
+        "office-address": "6/6 Cach Mang Thang 8, P. Ben Thanh, District 1",
+        "support": "Support",
+        "support-time": "7:00 - 18:00"
     },
     "menu": {
-        "admin":{
+        "admin": {
             "manage-user": "User",
             "manage-doctor": "Manage doctor",
             "manage-admin": "Manage admin",
             "crud": "CRUD user",
-            "crud-redux": "CRUD Redux",
+            "crud-redux": "Manage user",
             "clinic": "Clinic",
             "manage-clinic": "Manage clinic",
             "specialty": "Specialty",
@@ -34,11 +51,16 @@
             "manage-handbook": "Manage handbook"
         },
         "doctor": {
-            "manage-schedule": "Manage schedule"
+            "manage-schedule": "Manage schedule",
+            "manage-patient": "Manage patient"
         }
     },
     "homepage": {
+        "specialty": "Specialty",
+        "medical-facility": "Medical Facility",
         "outstanding-doctor": "Outstanding Doctor",
+        "handbook": "Handbook",
+        "about": "ClinicBooker on Social Media",
         "view-more": "View more"
     },
     "manage-user": {
@@ -52,12 +74,20 @@
         "address": "Address",
         "position": "Position",
         "role": "Role",
-        "image": "Image",
+        "avatar": "Avatar",
         "create-button": "Create",
         "edit-button": "Update",
-        "upload": "Upload"
+        "upload": "Upload",
+        "table": {
+            "lastname": "Last name",
+            "firstname": "First name",
+            "address": "Address",
+            "action": "Action",
+            "edit": "Edit",
+            "delete": "Delete"
+        }
     },
-    "manage-schedule":{
+    "manage-schedule": {
         "title": "Manage schedule",
         "choose-doctor": "Choose doctor",
         "choose-date": "Choose date",
@@ -77,16 +107,32 @@
             "province": "Province",
             "name-clinic": "Clinic name",
             "address-clinic": "Address",
-            "note": "Note"
+            "note": "Note",
+            "specialty": "Specialty",
+            "type": "Type..."
+        },
+        "manage-specialty": {
+            "title": "Manage Specialty",
+            "name": "Specialty name",
+            "table": {
+                "name": "Specialty",
+                "updatedAt": "Updated at"
+            }
+        },
+        "manage-clinic": {
+            "title": "Manage Clinic",
+            "name": "Clinic name",
+            "address": "Address"
         }
     },
     "patient": {
         "detail-doctor": {
+            "doctor-info": "Doctor Detail",
             "schedule": "Schedule",
             "no-schedule": "No schedule!",
             "select-and-book": "Select and book"
         },
-        "extra-info":{
+        "extra-info": {
             "title-address": "Address",
             "title-price": "Price:",
             "view-detail": "View detail",
@@ -103,13 +149,19 @@
             "birthday": "Birthday",
             "gender": "Gender",
             "select": "Select ...",
-            "confirm": "Confirm",
+            "booking-btn": "Book now",
             "cancel": "Cancel"
         },
         "profile-doctor": {
             "free-booking": "Free to booking",
             "price": "Price"
         }
-
+    },
+    "markdown": {
+        "placeholder": "Type some description..."
+    },
+    "manage-clinic": {
+        "create-btn": "Create",
+        "update-btn": "Update"
     }
 }

@@ -1,23 +1,29 @@
 import React, { Component } from "react";
 import "./Section.scss";
 import "./About.scss";
+import { FormattedMessage } from "react-intl";
 
 class About extends Component {
     render() {
         return (
-            <div className="section section-about">
+            <div className="general-section section-about" id="section-about">
                 <div className="section-container">
                     <div className="section-header">
-                        <span>Truyền thông nói về BookingCare</span>
+                        <span>
+                            <FormattedMessage id="homepage.about" />
+                        </span>
                     </div>
                     <div className="section-body">
                         <div className="body-left">
                             <div className="embed-video-responsive">
                                 <iframe
-                                    src="https://www.youtube.com/embed/FyDQljKtWnI"
+                                    // width="956"
+                                    // height="538"
+                                    src="https://www.youtube.com/embed/eXisi5NLTYA"
                                     title="YouTube video player"
-                                    frameBorder="0"
+                                    frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullscreen
                                 ></iframe>
                             </div>
                         </div>
@@ -26,8 +32,7 @@ class About extends Component {
                                 <li>
                                     <a
                                         target="_blank"
-                                        href="https://suckhoedoisong.vn/dat-lich-kham-benh-tiet-kiem-thong-minh-va-hieu-qua-n153232.html"
-                                        title="Báo sức khỏe đời sống nói về BookingCare"
+                                        title="Báo sức khỏe đời sống"
                                     >
                                         <i className="media-image image1"></i>
                                     </a>
@@ -35,7 +40,6 @@ class About extends Component {
                                 <li>
                                     <a
                                         target="_blank"
-                                        href="https://vtv.vn/video/ca-phe-khoi-nghiep-14-11-2018-334894.htm"
                                         title="VTV1 - Cà phê khởi nghiệp 14-11-2018"
                                     >
                                         <i className="media-image image2"></i>
@@ -44,26 +48,20 @@ class About extends Component {
                                 <li>
                                     <a
                                         target="_blank"
-                                        href="https://ictnews.vn/kinh-doanh/doanh-nghiep/startup-bookingcare-chinh-thuc-ra-mat-phien-ban-di-dong-cua-nen-tang-ho-tro-dat-lich-kham-online-173512.ict"
-                                        title="Báo điện tử ictnews giới thiệu BookingCare"
+                                        title="Báo điện tử ictnews giới thiệu"
                                     >
                                         <i className="media-image image3"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a
-                                        target="_blank"
-                                        href="https://video.vnexpress.net/tin-tuc/cuoc-song-4-0/kham-benh-khong-phai-xep-hang-o-ha-noi-3797126.html"
-                                        title="VnExpress nói về BookingCare"
-                                    >
+                                    <a target="_blank" title="VnExpress">
                                         <i className="media-image image4"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a
                                         target="_blank"
-                                        href="https://infonet.vietnamnet.vn/khoe-dep/da-co-hon-20-000-luot-benh-nhan-dat-lich-kham-qua-bookingcare-175080.html"
-                                        title="Báo điện tử infonet nói về BookingCare"
+                                        title="Báo điện tử infonet"
                                     >
                                         <i className="media-image image7"></i>
                                     </a>
@@ -71,8 +69,7 @@ class About extends Component {
                                 <li>
                                     <a
                                         target="_blank"
-                                        href="http://ehealth.gov.vn/?action=News&newsId=46094"
-                                        title="Cục công nghệ thông tin - Bộ Y tế nói về BookingCare"
+                                        title="Cục công nghệ thông tin - Bộ Y tế"
                                     >
                                         <i className="media-image image6"></i>
                                     </a>
