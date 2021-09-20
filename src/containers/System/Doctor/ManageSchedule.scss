@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+
+.manage-schedule-container {
+    max-width: 80%;
+    margin: 0 auto;
+    .schedule-body {
+        margin-top: 12px;
+        .pick-hour-container {
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            .btn-schedule {
+                border: 1px solid #ccc;
+                
+                border-radius: 8px;
+                margin: 8px;
+                // width: 150px;
+                &.active {
+                    outline: none;
+                    background-color: $common-green;
+                    color: #fff;
+                }
+                &:hover {
+                    filter: brightness(90%);
+                }
+            }
+        }
+       
+        .create-btn,
+        .update-btn {
+            margin-top: 12px;
+            padding: 8px 16px;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            color: #fff;
+            &:hover {
+                filter: brightness(110%);
+            }
+        }
+        .create-btn {
+            background-color: $primary-color;
+        }
+        .update-btn {
+            background-color: $common-green;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        max-width: 100%;
+        margin: 0 16px;
+    }
+}
