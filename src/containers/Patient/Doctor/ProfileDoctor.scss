@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+
+.profile-doctor-container {
+    .profile-doctor-intro {
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+        .profile-doctor__content-left {
+            padding: 0 16px;
+            .avatar {
+                height: 100px;
+                width: 100px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+            }
+        }
+        .profile-doctor__content-right {
+            padding: 0 16px;
+            color: $text-dark;
+            .name {
+                font-size: 20px;
+                font-weight: 550;
+                padding-bottom: 8px;
+            }
+            .introduction {
+                text-align: justify;
+            }
+        }
+    }
+    .profile-doctor--show-detail {
+        float: right;
+        padding-right: 12px;
+        a {
+            color: $primary-color;
+        }
+    }
+    .profile-doctor__price {
+        display: flex;
+        
+        margin: 20px 0;
+        .profile-doctor__price--price {
+            font-size: 16px;
+            background-color: $primary-color;
+            color: #fff;
+            border-radius: 4px;
+            padding: 8px;
+
+        }
+    }
+}

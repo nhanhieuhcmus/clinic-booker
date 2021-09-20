@@ -147,12 +147,15 @@ class DoctorExtraInfo extends Component {
                                     </span>
                                 </div>
                                 <div className="content-payment">
-                                    <span>
+                                    <span className="payment-left">
                                         <FormattedMessage
                                             id={
                                                 "patient.extra-info.title-payment"
                                             }
                                         />
+                                        
+                                    </span>
+                                    <span className="payment-right">
                                         {extraInfo &&
                                         extraInfo.paymentTypeData &&
                                         language === LANGUAGES.VI
@@ -163,7 +166,7 @@ class DoctorExtraInfo extends Component {
                                         language === LANGUAGES.EN
                                             ? extraInfo.paymentTypeData.valueEn
                                             : ""}
-                                    </span>
+                                        </span>
                                 </div>
                             </div>
                             <span

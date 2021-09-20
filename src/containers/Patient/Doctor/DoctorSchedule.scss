@@ -1,20 +1,25 @@
+@import "../../../styles/variables";
+
 .doctor-schedule-container {
     height: 100%;
     .all-schedule {
-        padding: 12px 0;
         select {
             padding: 8px 0;
             outline: none;
             border: none;
-            border-bottom: 2px solid #45c3d2;
-            color: #45c3d2;
+            border-bottom: 2px solid $primary-color;
+
+            color: $primary-color;
+            font-size: 16px;
             font-weight: 550;
             cursor: pointer;
+            
         }
     }
     .all-available-time {
         .calendar {
-            padding: 12px 0;
+            padding: 16px 0;
+            font-size: 16px;
             span {
                 .icon-calendar {
                     margin-right: 4px;
@@ -26,24 +31,25 @@
             .head-content {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 8px;
+                gap: 12px;
+                z-index: 1000;
                 button {
-                    padding: 8px 12px;
-                    background-color: #fff04b;
+                    padding: 12px 16px;
+                    background-color: #fff8ae;
                     border: none;
-                    border-radius: 4px;
-                    font-weight: 550;
-                    color: rgb(63, 63, 63);
+                    border-radius: 8px;
+
                     &.btn-vi {
                         min-width: 120px;
                     }
                     &.btn-en {
-                        min-width: 156px;
+                        min-width: 168px;
                     }
                     &:hover {
-                        cursor: pointer;
+                        cursor: pointer !important;
                         color: #fff;
-                        background-color: #45c3d2;
+
+                        background-color: $primary-color;
                     }
                 }
                 .no-schedule {

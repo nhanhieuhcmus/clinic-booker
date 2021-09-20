@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "./DoctorSchedule.scss";
-import moment from "moment";
+import moment, { locale } from "moment";
 import { LANGUAGES } from "../../../utils";
 import { getScheduleByDateService } from "../../../services/userService";
 import { FormattedMessage } from "react-intl";
@@ -67,7 +67,7 @@ class DoctorSchedule extends Component {
                     obj.label = today;
                 } else {
                     obj.label = this.capitalizeFirstLetter(
-                        moment(new Date()).add(i, "days").format("dddd - DD/MM")
+                        moment(new Date()).add(i, "days").locale("vn").format("dddd - DD/MM")
                     );
                 }
             } else {
