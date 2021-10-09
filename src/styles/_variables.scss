@@ -1,6 +1,13 @@
 $base-size: 16px;
 $lh: 1.313;
 $fontmain:"Helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$text-dark: #404040;
+$text-grey: #969495;
+ 
+// $primary-color: #1dafd8;
+$primary-color:#00a2e8;
+
 $colormain:#0071ba;
 $colorsub:#bb8d09;
 $common-text-color:white;
@@ -28,7 +35,7 @@ $box-shadow-color: #0000004d;
 
 $dropdown-image: url("../assets/images/dropdown.svg");
 
-//date picker
+// date picker
 $date-picker-bg: $common-white;
 $date-picker-border: darken(#3f4458, 50%);
 $date-picker-arrow-hover: $common-orange;
@@ -42,3 +49,9 @@ $date-picker-today-border: $common-orange;
 $date-picker-today-bg: $common-orange;
 $date-picker-today-fg: #000;
 $date-picker-day-selected-fg: $common-white;
+
+// responsive
+$tablet: 768px;
+$laptop: 1024px;
+$slick-item-width-lg: 278px;
+$slick-item-height-lg: 150px;
