@@ -7,6 +7,12 @@ import { adminMenu, doctorMenu } from "./menuApp";
 import "./Header.scss";
 import { FormattedMessage } from "react-intl";
 import { LANGUAGES, USER_ROLE } from "../../utils/";
+import {
+    ButtonDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+} from "reactstrap";
 import _ from "lodash";
 
 class Header extends Component {
@@ -34,13 +40,24 @@ class Header extends Component {
         });
     }
 
-    handleChangeLanguage = (event) => {
+    // handleChangeLanguage = (event) => {
+    //     this.props.changeLanguageAppRedux(event.target.value);
+    // };
+
+    toggleLanguageDropdown = () => {
+        this.setState({
+            isLanguageDropdown: !this.state.isLanguageDropdown,
+        });
+    };
+
+    handleSelectLanguage = (event) => {
+        // fire Redux event: actions
         this.props.changeLanguageAppRedux(event.target.value);
     };
 
     render() {
         const { processLogout, language, userInfo } = this.props;
-
+        console.log(">>>>check current language: ", language);
         return (
             <div className="header-container">
                 {/* thanh navigator */}
@@ -56,27 +73,32 @@ class Header extends Component {
                             : ""}
                         !
                     </span>
-                    <select
-                        className="select-language"
-                        onClick={this.handleChangeLanguage}
+                    <ButtonDropdown
+                        className="header-language"
+                        isOpen={this.state.isLanguageDropdown}
+                        toggle={this.toggleLanguageDropdown}
                     >
-                        <option
-                            value={LANGUAGES.EN}
-                            selected={
-                                language === LANGUAGES.EN ? "selected" : null
-                            }
-                        >
-                            English
-                        </option>
-                        <option
-                            value={LANGUAGES.VI}
-                            selected={
-                                language === LANGUAGES.VI ? "selected" : null
-                            }
-                        >
-                            Tiếng Việt
-                        </option>
-                    </select>
+                        <DropdownToggle color="" caret size="md">
+                            {language === LANGUAGES.VI
+                                ? "Tiếng Việt"
+                                : "English"}
+                        </DropdownToggle>
+                        <DropdownMenu>
+                            <DropdownItem
+                                value={LANGUAGES.VI}
+                                onClick={this.handleSelectLanguage}
+                            >
+                                Tiếng Việt
+                            </DropdownItem>
+                            <DropdownItem
+                                value={LANGUAGES.EN}
+                                onClick={this.handleSelectLanguage}
+                            >
+                                English
+                            </DropdownItem>
+                        </DropdownMenu>
+                    </ButtonDropdown>
+
                     {/* nút logout */}
                     <div
                         className="btn btn-logout"
