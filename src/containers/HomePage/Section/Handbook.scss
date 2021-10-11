@@ -1,12 +1,29 @@
 .section-handbook {
     background-color: #f5f5f5;
     .item {
-        .image1 {
-            background-image: url("../../../assets/images/handbooks/handbook1.png");
+        .contain-zoom-bg-image {
+            .image1 {
+                background-image: url("../../../assets/images/handbooks/handbook1.png");
+            }
+            .image2 {
+                background-image: url("../../../assets/images/handbooks/handbook2.jpg");
+            }
+            .image3 {
+                background-image: url("../../../assets/images/handbooks/handbook3.jpg");
+            }
+            .image4 {
+                background-image: url("../../../assets/images/handbooks/handbook4.jpg");
+            }
+            .image5 {
+                background-image: url("../../../assets/images/handbooks/handbook5.jpg");
+            }
+            .image6 {
+                background-image: url("../../../assets/images/handbooks/handbook6.png");
+            }
         }
-        .item-tittle {
-            display: inline-block;
-            width: 260px;
+
+        .item-title {
+            display: block;
         }
     }
 }

@@ -6,63 +6,68 @@ import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getAllSpecialtiesService } from "../../../services/userService";
+import { withRouter } from "react-router";
 
 class Specialty extends Component {
-    render() {
-        const settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1,
+    constructor(props) {
+        super(props);
+        this.state = {
+            allSpecialties: [],
         };
+    }
+    async componentDidMount() {
+        const response = await getAllSpecialtiesService();
+        if (response && response.errCode === 0) {
+            this.setState({
+                allSpecialties: response.data ? response.data : [],
+            });
+        }
+    }
+
+    handleViewDetailSpecialty = (item) => {
+        this.props.history.push(`/detail-specialty/${item.id}`);
+    };
+
+    render() {
+        let { allSpecialties } = this.state;
+      
         return (
-            <div className="section section-specialty">
+            <div className="general-section section-specialty" id="section-specialty">
                 <div className="section-container">
                     <div className="section-header">
-                        <span>Chuyên khoa phổ biến</span>
+                        <span>
+                            <FormattedMessage id="homepage.specialty" />
+                        </span>
                         <button className="section-view-more-button">
-                            Xem thêm
+                        <FormattedMessage id="homepage.view-more" />
                         </button>
                     </div>
                     <div className="section-body">
-                        <Slider {...settings}>
-                            <div className="item">
-                                <div className="contain-zoom-bg-image">
-                                    <div className="bg-image image1"></div>
-                                </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
-                            </div>
-                            <div className="item">
-                                <div className="contain-zoom-bg-image">
-                                    <div className="bg-image image2"></div>
-                                </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
-                            </div>
-                            <div className="item">
-                                <div className="contain-zoom-bg-image">
-                                    <div className="bg-image image3"></div>
-                                </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
-                            </div>
-                            <div className="item">
-                                <div className="contain-zoom-bg-image">
-                                    <div className="bg-image image4"></div>
-                                </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
-                            </div>
-                            <div className="item">
-                                <div className="contain-zoom-bg-image">
-                                    <div className="image image5"></div>
-                                </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
-                            </div>
-                            <div className="item">
-                                <div className="contain-zoom-bg-image">
-                                    <div className="image image6"></div>
-                                </div>
-                                <div className="item-tittle">Cơ Xương Khớp</div>
-                            </div>
+                        <Slider {...this.props.settings}>
+                            {allSpecialties &&
+                                allSpecialties.length > 0 &&
+                                allSpecialties.map((item) => (
+                                    <div
+                                        className="item"
+                                        key={item.id}
+                                        onClick={() =>
+                                            this.handleViewDetailSpecialty(item)
+                                        }
+                                    >
+                                        <div className="contain-zoom-bg-image">
+                                            <div
+                                                className="bg-image"
+                                                style={{
+                                                    backgroundImage: `url(${item.image})`,
+                                                }}
+                                            ></div>
+                                        </div>
+                                        <div className="item-title">
+                                            {item.name}
+                                        </div>
+                                    </div>
+                                ))}
                         </Slider>
                     </div>
                 </div>
@@ -82,5 +87,7 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
-export default Specialty;
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(Specialty)
+);
+// export default Specialty;

@@ -1,77 +1,94 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./Footer.scss";
+import { FormattedMessage } from "react-intl";
 
 class Footer extends Component {
     render() {
         return (
             <div className="footer-container">
                 <div className="footer-content">
-                    <div className="col1">
-                        <div className="logo"></div>
+                    <div className="footer-col1">
+                        <div
+                            className="col1__brand"
+                            onClick={this.returnToHome}
+                        >
+                            <span className="header__brand-logo">
+                                <i className="fab fa-cuttlefish"></i>
+                            </span>
+                            <span className="header__brand-name">
+                                linicBooker
+                            </span>
+                        </div>
                         <div className="col1-title">
-                            Công ty Cổ phần Công nghệ BookingCare
+                            <FormattedMessage id="footer.corp" />
                         </div>
                         <p>
-                            {" "}
-                            ĐKKD số: 0106790291. Sở KHĐT Hà Nội cấp ngày
-                            16/03/2015
+                            <FormattedMessage id="footer.no" />
                         </p>
                     </div>
-                    <div className="col2">
+                    <div className="footer-col2">
                         <ul className="col2-related-link">
                             <li>
-                                <a href="">Liên hệ hợp tác</a>
+                                <a href="">
+                                    <FormattedMessage id="footer.collaborate" />
+                                </a>
                             </li>
                             <li>
-                                <a href="">Câu hỏi thường gặp</a>
+                                <a href="">
+                                    <FormattedMessage id="footer.faq" />
+                                </a>
                             </li>
                             <li>
-                                <a href="">Điều khoản sử dụng</a>
+                                <a href="">
+                                    <FormattedMessage id="footer.term" />
+                                </a>
                             </li>
                             <li>
-                                <a href="">Chính sách bảo mật</a>
+                                <a href="">
+                                    <FormattedMessage id="footer.privacy-policy" />
+                                </a>
                             </li>
                             <li>
-                                <a href="">Quy trình giải quyết khiếu nại</a>
+                                <a href="">
+                                    <FormattedMessage id="footer.resolve-procedure" />
+                                </a>
                             </li>
                             <li>
-                                <a href="">Quy chế hoạt động</a>
+                                <a href="">
+                                    <FormattedMessage id="footer.regulation" />
+                                </a>
                             </li>
                         </ul>
                     </div>
-                    <div className="col3">
+                    <div className="footer-col3">
                         <div className="office">
                             <div className="office-title">
-                                Trụ sở tại Hà Nội
+                                <FormattedMessage id="footer.headquarters" />
                             </div>
                             <div className="office-address">
-                                28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội
+                                <FormattedMessage id="footer.headquarters-address" />
                             </div>
                         </div>
                         <div className="office">
                             <div className="office-title">
-                                Văn phòng tại TP Hồ Chí Minh
+                                <FormattedMessage id="footer.office" />
                             </div>
                             <div className="office-address">
-                                6/6 Cách Mạch Tháng Tám, P. Bến Thành, Quận 1
+                                <FormattedMessage id="footer.office-address" />
                             </div>
                         </div>
                         <div className="support">
-                            <div className="support-title">Hỗ trợ khách hàng</div>
-                            support@bookingcare.vn (7h - 18h)
+                            <div className="support-title">
+                                <FormattedMessage id="footer.support" />
+                            </div>
+                            support@clinicbooker.vn (
+                            <FormattedMessage id="footer.support-time" />)
                         </div>
                     </div>
                 </div>
                 <hr />
-                <div className="footer-media">
-                Tải ứng dụng BookingCare cho điện thoại hoặc máy tính bảng:&nbsp;
-                <a href="">Android</a>
-                &nbsp;|&nbsp;
-                <a href="">IOS</a>
-                &nbsp;|&nbsp;
-                <a href="">Khác</a>
-                </div>
+                <div className="footer-copyright">© 2021 ClinicBooker.</div>
             </div>
         );
     }

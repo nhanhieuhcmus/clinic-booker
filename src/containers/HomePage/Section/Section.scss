@@ -1,36 +1,65 @@
-.section {
-    height: 330px;
+@import "../../../styles/variables";
+
+.general-section {
     // border: 5px solid black;
-    // Reset slick slider css
+
+    padding-top: 100px;
+    margin-top: -60px;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+
+    // // Reset slick slider css
+    .slick-disabled {
+        display: none !important;
+    }
     .slick-prev,
     .slick-next {
-        height: 40px !important;
-        width: 40px !important;
-        border: 2px solid #d7d7d7 !important;
+        height: 52px !important;
+        width: 52px !important;
         z-index: 10;
-        &:hover{
-            background-color: #fff !important;
-            border-color: #ccc !important;
+        opacity: 0.4;
+
+        &:hover {
+            opacity: 1;
         }
     }
 
     .slick-prev:before,
     .slick-next:before {
-        font-family: "Glyphicons Halflings" !important;
-        text-align: center;
-        color: #959595;
-        padding: 10px;
-        // content: "\e257" !important;
-        
+        font-size: 52px !important;
+        color: #333 !important;
+    }
+
+    /* the slides */
+    .slick-slide {
+        margin: 0 12px !important;
+    }
+    /* the parent */
+    .slick-list {
+        margin: 0 -12px !important;
+    }
+
+    /* Fix auto grow height
+    src: https://github.com/akiran/react-slick/issues/732#issuecomment-375759617
+    */
+    .slick-slide {
+        height: auto !important; // ← that must not be ignored
+    }
+    .slick-track {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
     }
 
     .section-container {
-        margin: 0 150px;
+        margin: 0 120px;
+        padding: 16px 0;
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
+            padding: 4px 0;
             span {
                 color: #333;
                 font-size: 24px;
@@ -38,7 +67,6 @@
             }
             .section-view-more-button {
                 text-transform: uppercase;
-                color: #282e41;
                 background-color: #ebebeb;
                 height: 42px;
                 border: none;
@@ -46,49 +74,56 @@
                 font-size: 12px;
                 font-weight: 100;
                 padding: 12px;
+                border-radius: 4px;
                 &:hover {
                     cursor: pointer;
                     color: #fff;
-                    background-color: #f7d800;
+                    background-color: $primary-color;
                 }
             }
         }
         .section-body {
             .item {
-                // border: 1px solid gray;
-                margin: 8px;
                 cursor: pointer;
-
                 &:hover .bg-image {
-                    transform: scale(1.2);
+                    transform: scale(1.3);
                     opacity: 0.7;
                 }
-                &:hover .item-tittle {
-                    color: #45c3d2;
+                &:hover .item-title {
+                    color: $primary-color;
                 }
-                .item-tittle {
-                    font-size: 14px;
-                    font-weight: 100;
-                    color: #333;
-                    padding: 8px 0;
+                .item-title {
+                    font-size: 16px;
+                    color: #292929;
+                    padding: 12px 0;
                 }
 
                 .contain-zoom-bg-image {
-                    width: 278px;
-                    height: 150px;
+                    // width: 282px;
+                    // height: 150px;
+                    width: 100%;
+                    border-radius: 16px;
                     overflow: hidden; // only zoom inside the div
                     .bg-image {
-                        width: 278px;
-                        height: 150px;
+                        // width: 278px;
+                        // height: 150px;
+                        /* Source from F8 fullstack to make
+                         * div image fill to slick item width */
                         width: 100%;
-                        height: 100%;
-                        background-position: center center;
+                        padding-top: 56.25%; // width:height=9:16=56.25%
+                        object-fit: cover;
+                        border-radius: 16px;
                         background-size: cover;
                         background-repeat: no-repeat;
-                        transition: transform 0.2s ease;
+                        background-position: 50%;
+                        background-color: rgba(0, 0, 0, 0.1);
+                        transition: transform 0.2s ease-in-out;
                     }
                 }
             }
+        }
+        @media screen and (max-width: 1300px) {
+            margin: 0 50px;
         }
     }
 }
