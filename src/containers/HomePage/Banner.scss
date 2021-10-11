@@ -1,0 +1,174 @@
+@import "../../styles/variables";
+
+.banner {
+    // margin-top: 80px;
+    height: calc(100vh - 200px);
+    // height: 90vh;
+    background-image: url("../../assets/images/banner2.jpg");
+    background-position: right center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    // filter: brightness(80%);
+
+    .banner-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 60%;
+
+        padding: 80px 0;
+        // background-image: linear-gradient(
+        //     rgba(0, 0, 0, 0.25),
+        //     rgba(255, 255, 255, 0.1)
+        // );
+        .banner-title {
+            // left: 50%;
+            // transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 400;
+            text-shadow: 1px 1px 1px #fff;
+            margin-bottom: 12px;
+            // color: $primary-color;
+            color: #333;
+            font-weight: bold;
+            p {
+                // text-transform: uppercase;
+                // font-weight: bold;
+            }
+        }
+        .banner-search {
+            min-width: 300px;
+            width: 456px;
+            height: 100px;
+            .input-search {
+                position: relative;
+                padding: 0 32px;
+                background-color: $primary-color;
+                border-radius: 24px;
+                opacity: 0.8;
+                .search-icon {
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    top: 0;
+                    left: 0;
+                    text-align: center;
+                }
+                input {
+                    border: none;
+                    outline: none;
+                    width: 300px;
+                    height: 50px;
+                    background: transparent;
+                    padding: 0 12px;
+                }
+            }
+        }
+
+        .banner__button {
+            display: flex;
+            gap: 12px;
+            .explore-btn,
+            .install-btn {
+                display: block;
+                font-size: 16px;
+                font-weight: 600;
+                padding: 8px 24px;
+                border-radius: 4px;
+                text-decoration: none;
+            }
+            .explore-btn {
+                background-color: $primary-color;
+                border-color: $primary-color;
+                color: #fff;
+                &:hover {
+                    filter: brightness(110%);
+                }
+            }
+            .install-btn {
+                border: 1px solid $text-dark;
+                color: $text-dark;
+
+                &:hover {
+                    background-color: $text-dark;
+                    color: #fff;
+                }
+            }
+        }
+        .banner-download-media {
+            display: flex;
+            justify-content: center;
+            width: 300px;
+            margin-top: 50px;
+            .google-play {
+                height: 32px;
+                width: 100%;
+                cursor: pointer;
+                background: url("../../assets/images/google-play.svg") center /
+                    contain no-repeat;
+            }
+            .app-store {
+                height: 32px;
+                width: 100%;
+                cursor: pointer;
+                background: url("../../assets/images/app-store.svg") center /
+                    contain no-repeat;
+            }
+        }
+    }
+    .banner-footer {
+        display: flex;
+        align-items: flex-end;
+        min-height: 40%;
+        padding: 30px 0;
+        // background-image: linear-gradient(
+        //     rgba(255, 255, 255, 0.1),
+        //     rgba(255, 255, 255, 0.9),
+        //     rgba(255, 255, 255, 1)
+        // );
+        .banner-option {
+            display: flex;
+            // flex-basis: 16.6666%;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            // margin-top: 50px;
+            color: $text-dark;
+
+            .option-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 150px;
+                color: $text-dark;
+                &:hover {
+                    color: $primary-color;
+                    cursor: pointer;
+                }
+                .option-image {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .option-title {
+                    font-size: 16px;
+                    // font-weight: bold;
+                    padding: 8px 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
