@@ -42,7 +42,7 @@ class ModalUser extends Component {
             <Modal
                 isOpen={this.props.isOpen}
                 toggle={this.props.toggle}
-                className={"abc"}
+                // className={"abc"}
                 size="lg"
                 centered
             >

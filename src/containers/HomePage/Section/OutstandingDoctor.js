@@ -34,16 +34,16 @@ class OutstandingDoctor extends Component {
         this.props.history.push(`/detail-doctor/${doctor.id}`);
     };
 
-
-
     render() {
-        const { topDoctorsArr } = this.state;
-
+        let { topDoctorsArr } = this.state;
         const currentLanguage = this.props.language;
         console.log("check topDoctorsArr: ", topDoctorsArr);
 
         return (
-            <div className="general-section section-outstanding-doctor">
+            <div
+                className="general-section section-outstanding-doctor"
+                id="section-outstanding-doctor"
+            >
                 <div className="section-container">
                     <div className="section-header">
                         <span>
@@ -56,24 +56,39 @@ class OutstandingDoctor extends Component {
                     <div className="section-body">
                         <Slider {...this.props.settings}>
                             {topDoctorsArr &&
-                                topDoctorsArr.map((doctor,index) => {
-                                    const nameVi = `${doctor.positionData.valueVi}, ${doctor.firstName} ${doctor.lastName}`;
-                                    const nameEn = `${doctor.positionData.valueEn}, ${doctor.lastName} ${doctor.firstName}`;
-                                    let imageBase64 = '';
+                                topDoctorsArr.length > 0 &&
+                                topDoctorsArr.map((doctor, index) => {
+                                    const nameVi = `${doctor.positionData.valueVi}, ${doctor.lastName} ${doctor.firstName}`;
+                                    const nameEn = `${doctor.positionData.valueEn}, ${doctor.firstName} ${doctor.lastName}`;
+                                    let imageBase64 = "";
                                     if (doctor.image) {
-                                        imageBase64 = new Buffer(doctor.image,'base64').toString('binary');
+                                        imageBase64 = Buffer.from(
+                                            doctor.image,
+                                            "base64"
+                                        ).toString("binary");
                                     }
                                     return (
-                                        <div className="item" key={index} onClick={()=>this.handleViewDetailDoctor(doctor)}>
+                                        <div
+                                            className="item"
+                                            key={index}
+                                            onClick={() =>
+                                                this.handleViewDetailDoctor(
+                                                    doctor
+                                                )
+                                            }
+                                        >
                                             <div className="item-border">
-                                                <div className="contain-zoom-bg-image">
+                                                <div className="contain-zoom-bg-image__doctor">
                                                     <div className="outer-bg">
-                                                        <div className="bg-image image1"
-                                                        style={{backgroundImage:`url(${imageBase64})`}}
+                                                        <div
+                                                            className="bg-image__doctor"
+                                                            style={{
+                                                                backgroundImage: `url(${imageBase64})`,
+                                                            }}
                                                         ></div>
                                                     </div>
                                                 </div>
-                                                <div className="item-tittle">
+                                                <div className="item-title">
                                                     {currentLanguage ===
                                                     LANGUAGES.VI
                                                         ? nameVi
@@ -83,7 +98,6 @@ class OutstandingDoctor extends Component {
                                         </div>
                                     );
                                 })}
-                            
                         </Slider>
                     </div>
                 </div>
