@@ -5,10 +5,9 @@ import { push } from "connected-react-router";
 import * as actions from "../../store/actions";
 
 import "./Login.scss";
-import { FormattedMessage } from "react-intl";
-import { userService } from "../../services/";
+// import { userService } from "../../services/";
 import { handleLoginApi } from "../../services/userService";
-import { userLoginSuccess } from "../../store/actions";
+// import { userLoginSuccess } from "../../store/actions";
 
 class Login extends Component {
     constructor(props) {
@@ -47,8 +46,7 @@ class Login extends Component {
                 this.setState({
                     errMessage: response.message,
                 });
-            }
-            else {
+            } else {
                 this.props.userLoginSuccess(response.user);
             }
         } catch (error) {
@@ -66,17 +64,24 @@ class Login extends Component {
     };
 
     handleEnterPress = (event) => {
-        if (event.key==="Enter" || event.keyCode === 13){
+        if (event.key === "Enter" || event.keyCode === 13) {
             this.handleLogin();
         }
-    } 
+    };
 
     render() {
         return (
             <div className="login-background">
                 <div className="login-container">
-                    <div className="login-content">
-                        <div className="login-title text-center">Login</div>
+                    <div className="login__content">
+                        <div className="login__brand">
+                            <span className="login__brand-logo">
+                                <i className="fab fa-cuttlefish"></i>
+                            </span>
+                            <span className="header__brand-name">
+                                linicBooker
+                            </span>
+                        </div>
                         <div>
                             <div className="form-group login-input">
                                 <label htmlFor="">Username</label>
@@ -119,7 +124,7 @@ class Login extends Component {
                                     <p>{this.state.errMessage}</p>
                                 </div>
                             ) : null}
-                         
+
                             <div>
                                 <button
                                     className="btn-login"
@@ -144,6 +149,10 @@ class Login extends Component {
                             <div></div>
                         </div>
                     </div>
+                    <div className="login__img">
+                        {/* <h1>ClinicBooker</h1> */}
+                        <div className="image"></div>
+                    </div>
                 </div>
             </div>
         );
@@ -160,7 +169,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         navigate: (path) => dispatch(push(path)),
         // userLoginFail: () => dispatch(actions.adminLoginFail()),
-        userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo)),
+        userLoginSuccess: (userInfo) =>
+            dispatch(actions.userLoginSuccess(userInfo)),
     };
 };
 
